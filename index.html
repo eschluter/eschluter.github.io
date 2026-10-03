@@ -13,6 +13,7 @@
     <meta property="og:title" content="Erik Schluter — SVP Engineering at zerohash">
     <meta property="og:description" content="Blockchain technology, digital assets, payments, and trading.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://erikschluter.com/images/erik.jpg">
     <meta property="og:url" content="https://erikschluter.com">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0f14'/%3E%3Ctext x='50' y='68' font-size='56' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%235eead4'%3EE%3C/text%3E%3C/svg%3E">
@@ -146,6 +147,35 @@
         }
         .lede strong { color: var(--text); font-weight: 500; }
 
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: center;
+        }
+        .portrait {
+            position: relative;
+            margin: 0;
+        }
+        .portrait::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            opacity: .85;
+        }
+        .portrait img {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 1;
+            height: auto;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid var(--bg);
+        }
+
         .actions { display: flex; flex-wrap: wrap; gap: 12px; }
         .btn {
             display: inline-block;
@@ -251,6 +281,11 @@
         }
         footer ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
 
+        @media (max-width: 760px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+            .portrait { order: -1; width: 132px; }
+        }
+
         @media (max-width: 560px) {
             nav ul { gap: 14px; }
             header.hero { padding: 48px 0; }
@@ -276,6 +311,8 @@
         </nav>
 
         <header class="hero" id="top">
+            <div class="hero-grid">
+            <div>
             <span class="eyebrow">SVP Engineering · zerohash</span>
             <h1>Building the rails for <em>digital assets</em>.</h1>
             <p class="lede">
@@ -286,6 +323,11 @@
             <div class="actions">
                 <a class="btn primary" href="https://www.linkedin.com/in/erikschluter">Connect on LinkedIn</a>
                 <a class="btn" href="https://github.com/eschluter">GitHub</a>
+            </div>
+            </div>
+            <figure class="portrait">
+                <img src="images/erik.jpg" alt="Portrait of Erik Schluter" width="600" height="600">
+            </figure>
             </div>
         </header>
 
